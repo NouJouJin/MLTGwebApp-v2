@@ -72,7 +72,7 @@ const handleAccountChanged = async (accountNo, setAccount, setChainId, setNfts, 
     },
   };
 
-  const resNftData = await fetch(`https://deep-index.moralis.io/api/v2/${account}/nft?chain=${chainName}`, options);
+  const resNftData = await fetch(`https://deep-index.moralis.io/api/v2.2/${account}/nft?chain=${chainName}`, options);
   const resNft = await resNftData.json();
   console.log(JSON.stringify(resNft));
 
@@ -159,7 +159,7 @@ const handleCollectonSelect = async (chainName, setSelectedCollection, setSelect
     },
   };
 
-  const resNftData = await fetch(`https://deep-index.moralis.io/api/v2/nft/${selectedCollection}?chain=${chainName}&format=decimal`, options);
+  const resNftData = await fetch(`https://deep-index.moralis.io/api/v2.2/nft/${selectedCollection}?chain=${chainName}&format=decimal`, options);
   const resNft = await resNftData.json();
   let nfts = [];
   for (let nft of resNft.result) {
